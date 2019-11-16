@@ -1,7 +1,8 @@
-package com.oreodroid.codingchallenge
+package com.oreodroid.codingchallenge.persistence
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.oreodroid.codingchallenge.models.Job
 
 @Dao
 interface JobDao {
@@ -12,11 +13,11 @@ interface JobDao {
 
     // Insert list of jobs
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addJobs(users: List<Job>)
+    suspend fun addJobs(users: List<Job>)
 
     // Update list of jobs
     @Update
-    fun updateJobs(jobs: List<Job>)
+    suspend fun updateJobs(jobs: List<Job>)
 
     // Delete all table records
     @Query("DELETE * FROM job_table")

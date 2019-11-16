@@ -1,4 +1,4 @@
-package com.oreodroid.codingchallenge
+package com.oreodroid.codingchallenge.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
