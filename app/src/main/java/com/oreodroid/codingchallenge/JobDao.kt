@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
-interface JobDAO {
+interface JobDao {
 
     // Get All Jobs records
     @Query("SELECT * FROM job_table")
