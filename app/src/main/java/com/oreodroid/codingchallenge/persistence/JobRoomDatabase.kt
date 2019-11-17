@@ -9,7 +9,7 @@ import com.oreodroid.codingchallenge.models.Job
 @Database(entities = [Job::class], version = 1, exportSchema = false)
 abstract class JobRoomDatabase: RoomDatabase() {
 
-    abstract fun JobRoomDatabase(): JobDao
+    abstract fun jobDao(): JobDao
 
     companion object {
 

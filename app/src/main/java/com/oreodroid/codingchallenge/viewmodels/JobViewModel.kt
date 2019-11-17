@@ -14,7 +14,7 @@ class JobViewModel(application: Application): AndroidViewModel(application) {
     private val allJobs: LiveData<List<Job>>
 
     init {
-        val jobDao = JobRoomDatabase.getDatabaseInstance(application).JobRoomDatabase()
+        val jobDao = JobRoomDatabase.getDatabaseInstance(application).jobDao()
         repository = JobRepository(jobDao)
         allJobs = repository.allJobs
     }
