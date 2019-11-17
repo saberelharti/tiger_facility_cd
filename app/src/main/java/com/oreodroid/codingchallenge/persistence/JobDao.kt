@@ -20,7 +20,7 @@ interface JobDao {
     suspend fun updateJobs(jobs: List<Job>)
 
     // Delete all table records
-    @Query("DELETE * FROM job_table")
-    fun deletAllJobs()
+    @Query("DELETE FROM job_table")
+    suspend fun deleteAllJobs()
 
 }
