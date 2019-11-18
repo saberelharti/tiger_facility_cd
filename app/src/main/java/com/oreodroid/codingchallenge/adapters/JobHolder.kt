@@ -1,11 +1,11 @@
 package com.oreodroid.codingchallenge.adapters
 
+import android.annotation.SuppressLint
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.oreodroid.codingchallenge.R
 import com.oreodroid.codingchallenge.models.Job
-import kotlinx.android.synthetic.main.recyclerview_job_item.view.*
 
 class JobHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -18,8 +18,9 @@ class JobHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val jobLocation: TextView = itemView.findViewById(R.id.location)
 
     // Bind data to the item view
+    @SuppressLint("SetTextI18n")
     fun bindData(job: Job) {
-        orderTime.text = job.orderTime.toString()
+        orderTime.text = job.orderTime
         customerName.text = job.customerName
         duration.text = job.distance.toString()
         recurrence.text = job.recurrency.toString()

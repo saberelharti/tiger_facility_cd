@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.oreodroid.codingchallenge.adapters.JobAdapter
 import com.oreodroid.codingchallenge.viewmodels.JobViewModel
-import java.io.Console
 
 class MainActivity: AppCompatActivity() {
 
@@ -35,5 +34,10 @@ class MainActivity: AppCompatActivity() {
             Log.d("JOB LIST SIZE", jobs.size.toString())
         })
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        jobViewModel.cancelJobs()
     }
 }

@@ -1,9 +1,7 @@
 package com.oreodroid.codingchallenge.viewmodels
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.oreodroid.codingchallenge.models.Job
 import com.oreodroid.codingchallenge.persistence.JobRoomDatabase
 import com.oreodroid.codingchallenge.repositories.JobRepository
@@ -18,11 +16,15 @@ class JobViewModel(application: Application): AndroidViewModel(application) {
         val jobDao = JobRoomDatabase.getDatabaseInstance(application, viewModelScope).jobDao()
 
         repository = JobRepository(jobDao)
-        allJobs = repository.allJobs
+        allJobs = repository.getJobs()
     }
 
     fun getJobList(): LiveData<List<Job>> {
         return allJobs
+    }
+
+    fun cancelJobs(){
+        repository.cancelJobs()
     }
 
 }

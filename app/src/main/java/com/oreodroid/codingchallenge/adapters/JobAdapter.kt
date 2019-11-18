@@ -8,7 +8,7 @@ import com.oreodroid.codingchallenge.models.Job
 
 class JobAdapter: RecyclerView.Adapter<JobHolder>() {
 
-    private var jobList: List<Job> = emptyList<Job>()
+    private var jobList: List<Job> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobHolder {
         // return

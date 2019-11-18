@@ -22,45 +22,45 @@ abstract class JobRoomDatabase: RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    var jobDao = database.jobDao()
+                    val jobDao = database.jobDao()
 
                     // Delete all content here.
                     jobDao.deleteAllJobs()
 
 
                     // Add sample words.
-                    var job = Job(    12,
-                    "testUser",
-                    1.885938875621,
-                    "2016-03-04T00:00:00.000Z",
-                    "oven",
-                    2.0,
-                    "dc4n47ggy",
-                    "16:00",
-                    "Cash",
-                    33.50,
-                    7,
-                    "Berlin",
-                    52.5130435,
-                    13.4180222,
-                    12047,
-                    "bruckenstrasse 5a",
-                    "FULFILLED")
-
-                    var job1 = Job(    13,
+                    val job = Job(    12,
                         "testUser",
-                        1.885938875621,
+                        "1.885938875621",
                         "2016-03-04T00:00:00.000Z",
                         "oven",
-                        2.0,
+                        "2.0",
                         "dc4n47ggy",
                         "16:00",
                         "Cash",
-                        33.50,
+                        "33.50",
                         7,
                         "Berlin",
-                        52.5130435,
-                        13.4180222,
+                        "52.5130435",
+                        "13.4180222",
+                        12047,
+                        "bruckenstrasse 5a",
+                        "FULFILLED")
+
+                    val job1 = Job(    13,
+                        "testUser",
+                        "1.885938875621",
+                        "2016-03-04T00:00:00.000Z",
+                        "oven",
+                        "2.0",
+                        "dc4n47ggy",
+                        "16:00",
+                        "Cash",
+                        "33.50",
+                        7,
+                        "Berlin",
+                        "52.5130435",
+                        "13.4180222",
                         12047,
                         "bruckenstrasse 5a",
                         "FULFILLED")

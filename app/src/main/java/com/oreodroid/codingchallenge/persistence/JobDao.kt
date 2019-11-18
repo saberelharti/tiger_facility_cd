@@ -9,7 +9,7 @@ interface JobDao {
 
     // Get All Jobs records
     @Query("SELECT * FROM job_table")
-    fun getAllJobs(): LiveData<List<Job>>
+    fun getAllJobs(): List<Job>
 
     // Insert list of jobs
     @Insert(onConflict = OnConflictStrategy.REPLACE)
