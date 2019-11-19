@@ -1,11 +1,16 @@
 package com.oreodroid.codingchallenge.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.serialization.Serializable
 
+@Serializable
+@Parcelize
 @Entity(tableName = "job_table")
 data class Job(
 
@@ -92,4 +97,4 @@ data class Job(
     @SerializedName("status")
     @ColumnInfo(name = "status")
     val status: String
-)
+) : Parcelable

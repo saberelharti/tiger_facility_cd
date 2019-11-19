@@ -1,5 +1,7 @@
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'kotlinx-serialization'
+
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -26,6 +28,9 @@ android {
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
@@ -41,13 +46,15 @@ dependencies {
     def retrofit_version = '2.6.2'
 
 
-
     // Default
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -77,5 +84,9 @@ dependencies {
 
     // UI
     implementation "com.google.android.material:material:$materialVersion"
+
+    // Serialization
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0"
 
 }

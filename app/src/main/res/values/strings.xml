@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Coding Challenge</string>
+    <string name="no_connection_picture">No Connection</string>
+    <string name="no_connection">No Connection</string>
+    <string name="no_connection_msg">You have lost connection with server,\n check your internet connection and try again.</string>
+    <string name="try_again">Try again</string>
+    <string name="detail_job_image">Detail Job Image</string>
+    <string name="duration_image">duration image</string>
+    <string name="recurrence_image">recurrence image</string>
+    <string name="location_image">location image</string>
+    <string name="euro">Euro</string>
 </resources>

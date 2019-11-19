@@ -1,101 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="7dp">
+        android:layout_marginLeft="@dimen/mtrl_card_spacing"
+        android:layout_marginTop="@dimen/mtrl_card_spacing"
+        android:layout_marginRight="@dimen/mtrl_card_spacing"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="#ffe8e8e8">
 
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
 
         <TextView
                 android:id="@+id/orderTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8:30"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="17dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginEnd="15dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"/>
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_circle"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
         <TextView
                 android:id="@+id/customerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Customer Name"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="17dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:layout_toStartOf="@+id/price"
+                android:layout_toLeftOf="@+id/price"
                 android:layout_toEndOf="@+id/orderTime"
                 android:layout_toRightOf="@+id/orderTime"
-                android:layout_alignParentTop="true"/>
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
         <TextView
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="33"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="17dp"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"/>
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/euro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/price"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/euro"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        <ImageView
+                android:id="@+id/durationIcon"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_below="@+id/customerName"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@+id/orderTime"
+                android:layout_toRightOf="@+id/orderTime"
+                android:contentDescription="@string/duration_image"
+                android:src="@drawable/ic_duration" />
 
         <TextView
                 android:id="@+id/duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duration: 2h"
+                android:layout_below="@+id/customerName"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@+id/durationIcon"
+                android:layout_toRightOf="@+id/durationIcon"
+                android:textColor="@color/gray"
+                android:textStyle="bold" />
+
+        <ImageView
+                android:id="@+id/repeatIcon"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_below="@+id/duration"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_toEndOf="@+id/orderTime"
                 android:layout_toRightOf="@+id/orderTime"
-                android:layout_below="@+id/customerName"/>
+                android:contentDescription="@string/recurrence_image"
+                android:src="@drawable/ic_repeat" />
 
         <TextView
                 android:id="@+id/recurrence"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recurrence: Weekly"
+                android:layout_below="@+id/duration"
                 android:layout_marginBottom="13dp"
+                android:layout_toEndOf="@+id/repeatIcon"
+                android:layout_toRightOf="@+id/repeatIcon"
+                android:textColor="@color/gray"
+                android:textStyle="bold" />
+
+        <ImageView
+                android:id="@+id/marker"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/recurrence"
                 android:layout_toEndOf="@+id/orderTime"
                 android:layout_toRightOf="@+id/orderTime"
-                android:layout_below="@+id/duration"/>
+                android:contentDescription="@string/location_image"
+                android:src="@drawable/ic_marker" />
+
 
         <TextView
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Berlin | street 2, 45000"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:ellipsize="end"
+                android:layout_below="@+id/recurrence"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toStartOf="@+id/status"
                 android:layout_toLeftOf="@+id/status"
-                android:layout_toEndOf="@+id/orderTime"
-                android:layout_toRightOf="@+id/orderTime"
-                android:layout_below="@+id/recurrence"/>
+                android:layout_toEndOf="@+id/marker"
+                android:layout_toRightOf="@+id/marker"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="@color/gray"
+                android:textStyle="bold" />
 
 
         <TextView
                 android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Invoiced"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
                 android:layout_below="@+id/recurrence"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_rounded"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
     </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
 
-</androidx.cardview.widget.CardView>

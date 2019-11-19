@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("jobs")
-    suspend fun loadListJobs(): Response<List<Job>>
+    suspend fun loadListJobs(): Response<ArrayList<Job>>
 }
